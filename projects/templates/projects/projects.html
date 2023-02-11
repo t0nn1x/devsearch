@@ -1,11 +1,45 @@
 {% extends "main.html" %} {% block content %}
 
-<h1>Projects Template</h1>
+<p>Hello, you are on the {{ message }} page</p>
 
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure rem recusandae
-  consectetur itaque hic omnis earum quaerat, sit quidem fuga necessitatibus
-  assumenda atque, laboriosam quia iste, soluta neque eius quod.
-</p>
+<hr />
+
+<h1>Projects</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Positive Votes</th>
+    <th>Ratio</th>
+    <th>Created</th>
+    <th></th>
+  </tr>
+
+  {% for project in projects %}
+
+  <tr>
+
+    <td><a href="{% url 'project' project.id %}">{{ project.title }}</a></td>
+
+    <td>{{ project.votes_ratio }} %</td>
+
+    <td>{{ project.votes_total }}</td>
+
+    <td>{{ project.created_at}}</td>
+
+    <td>
+      <a href="{% url 'delete-project' project.id %}">Delete</a>
+    </td>
+
+    <td>
+      <a href="{% url 'update-project' project.id %}">Update</a>
+    </td>
+
+
+    </tr>
+
+  {% endfor %}
+</table>
 
 {% endblock %}
+

@@ -9,7 +9,7 @@ class ProjectForm(ModelForm):
         widgets = {
             'tags': forms.CheckboxSelectMultiple(),
         }
-
+        
     def __init__(self, *args, **kwargs): # 
         super(ProjectForm, self).__init__(*args, **kwargs) 
         self.fields['title'].widget.attrs.update({'class': 'input', 'placeholder': 'Project Title'})

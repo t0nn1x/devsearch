@@ -436,7 +436,7 @@ img {
 .singleProject__liveLink:hover {
   font-weight: 500;
   border-bottom: 2px solid var(--color-main);
-}
+} 
 
 .singleProject__liveLink i {
   display: inline-block;
@@ -845,3 +845,6 @@ img {
   margin-bottom: 1rem;
   margin-top: 2rem;
 }
+
+
+

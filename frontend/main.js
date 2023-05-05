@@ -1,3 +1,22 @@
+let loginBtn = document.getElementById("login-btn");
+let logoutBtn = document.getElementById("logout-btn");
+let token = localStorage.getItem("token");
+
+if (token) {
+  loginBtn.style.display = "none";
+  logoutBtn.style.display = "block";
+} else {
+  loginBtn.style.display = "block";
+  logoutBtn.style.display = "none";
+}
+
+logoutBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  localStorage.removeItem("token");
+  window.location.href = "login.html";
+});
+
+
 let projectsUrl = "http://127.0.0.1:8000/api/projects/";
 
 let getProjects = () => {

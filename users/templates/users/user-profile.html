@@ -11,7 +11,7 @@
           <div class="card__body dev">
             <img
               class="avatar avatar--xl"
-              src="{{ profile.profile_image.url }}"
+              src="{{ profile.imageURL }}"
             />
             <h2 class="dev__name">{{ profile.name }}</h2>
             <p class="dev__title">{{profile.short_intro}}</p>
@@ -106,7 +106,7 @@
                 <a href="{% url 'project' project.id %}" class="project">
                   <img
                     class="project__thumbnail"
-                    src="{{project.imageURL}}"
+                    src="{{project.featured_image.url}}"
                     alt="project thumbnail"
                   />
                   <div class="card__body">
@@ -120,10 +120,10 @@
                     </p>
                     <p class="project--rating">
                       <span style="font-weight: bold"
-                        >{{project.vote_ratio}}%</span
+                        >{{project.votes_ratio}}%</span
                       >
-                      Postitive Feedback ({{project.vote_total}}
-                      Vote{{project.vote_total|pluralize:"s"}})
+                      Postitive Feedback ({{project.votes_total}}
+                      Vote{{project.votes_total|pluralize:"s"}})
                     </p>
                     <div class="project__tags">
                       {% for tag in project.tags.all %}

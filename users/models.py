@@ -23,7 +23,18 @@ class Profile(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return self.username
+    
+    class Meta:
+        ordering = ['created_at']
+    
+    @property
+    def imageURL(self):
+        try:
+            url = self.profile_image.url
+        except:
+            url = ''
+        return url
 
 
 class Skill(models.Model):

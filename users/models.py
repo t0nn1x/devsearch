@@ -67,3 +67,4 @@ class Message(models.Model):
 
     class Meta:
         ordering = ['is_read', '-created_at']
+
